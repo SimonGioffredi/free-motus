@@ -8,6 +8,7 @@ import type { ContainerMotusAttemptsInterface } from '@/types/components/organis
 const word = useWord()
 const guess = ref('')
 const attempts: Ref<ContainerMotusAttemptsInterface> = ref([])
+const maxAttempts = ref(7)
 const message = ref('')
 const isOver = ref(false)
 
@@ -34,7 +35,7 @@ const onSubmit = () => {
     return
   }
 // Si trop de tentative on été effectuée
-  if (attempts.value.length >= 6) {
+  if (attempts.value.length >= maxAttempts.value) {
     message.value = `Désolé, vous avez utilisé toutes vos tentatives. Le mot était : ${word.value}`
   }
 
