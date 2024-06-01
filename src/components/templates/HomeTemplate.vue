@@ -1,6 +1,6 @@
-<script setup>
-import TheMain from '@/components/atoms/TheMain.vue'
-import ContainerMotus from '@/components/organisms/ContainerMotus.vue'
+<script setup lang="ts">
+  import TheMain from '@/components/atoms/TheMain.vue'
+  import ContainerMotus from '@/components/organisms/ContainerMotus.vue'
 </script>
 
 <template>
