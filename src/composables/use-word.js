@@ -10,6 +10,6 @@ export default function useWord() {
     // On récupère un index aléatoire dans le tableau de mots
     const index  = Math.floor(Math.random() * words.length)
     // On retourne le mot aléatoire
-    return words[index]
+    return words[index].toLowerCase()
   })
 }
