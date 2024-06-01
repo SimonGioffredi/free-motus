@@ -4,6 +4,7 @@ import TheSection from '@/components/atoms/TheSection.vue'
 import useWord from '@/composables/use-word'
 import { computed, type Ref, ref, watch } from 'vue'
 import type { ContainerMotusAttemptsInterface } from '@/types/components/organisms/ContainerMotus.types'
+import TheWrapper from '@/components/atoms/TheWrapper.vue'
 
 const word = useWord()
 const guess = ref('')
@@ -51,11 +52,11 @@ const onSubmit = () => {
  */
 const getClass = (letter: string, index: number): string => {
   // Si la lettre bien placée dans le mot
-  if (letter === word.value[index]) return 'good'
+  if (letter === word.value[index]) return 'bg-green-500'
   // Si elle est contenues dans le mot de base
-  if (word.value.includes(letter)) return 'bad-placement'
+  if (word.value.includes(letter)) return 'bg-orange-500'
   // Si elle n'est pas dans le mot
-  return 'false'
+  return 'bg-red-500'
 }
 
 /**
@@ -68,25 +69,31 @@ watch(message, () => {
 
 <template>
   <TheSection class="container-motus">
-    <TheTitle :title="`Motus - ${word}`" />
-    <input
-      v-model="guess"
-      :maxlength="word.length"
-      :placeholder="placeholder"
-      :disabled="isOver"
-      @keyup.enter="onSubmit"
-    >
-    <ul v-for="attempt in attempts" :key="attempt.id">
-      <li>
-        <p>
-          <span v-for="(letter, i) in attempt.word" :key="i" :class="getClass(letter, i)">
-            {{ letter }}
-          </span>
-        </p>
-      </li>
-    </ul>
-
-    <div v-if="message">{{ message }}</div>
+    <TheWrapper>
+      <TheTitle :title="`Motus - ${word}`" />
+      <div v-if="message">{{ message }}</div>
+      <input
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        v-model="guess"
+        :maxlength="word.length"
+        :placeholder="placeholder"
+        :disabled="isOver"
+        @keyup.enter="onSubmit"
+      >
+      <ul v-for="attempt in attempts" :key="attempt.id" class="max-w-xs">
+        <li>
+          <p class="flex grid-cols-6">
+            <span
+              v-for="(letter, i) in attempt.word"
+              :key="i"
+              :class="`${getClass(letter, i)} flex items-center justify-center shrink-0 flex-1 aspect-square`"
+            >
+              {{ letter }}
+            </span>
+          </p>
+        </li>
+      </ul>
+    </TheWrapper>
   </TheSection>
 </template>
 

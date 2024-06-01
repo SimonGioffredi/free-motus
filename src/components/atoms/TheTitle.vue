@@ -9,5 +9,5 @@ const tag = 'h1'
 </script>
 
 <template>
-  <component :is="tag">{{ title }}</component>
+  <component :is="tag" class="text-3xl font-bold underline my-5">{{ title }}</component>
 </template>
