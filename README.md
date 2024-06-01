@@ -28,7 +28,7 @@ Première fois que j'utilise cette librairie (et même première fois que j'util
 
 **Tests unitaires**
 
-Pareil, première fois que j'utilise une librairie de test unitaire. Comme je suis en agence, c'est complexe de mettre en place des tests sur nos projets.
+Pareil, première fois que j'utilise une librairie de test unitaire. Comme je suis en agence, ça prend trop de temps dans nos projets qui sont pour la plupart des "one shot".
 
 Ça me semble déjà un peu plus complexe, mais ça m'intéresse beaucoup.
 
