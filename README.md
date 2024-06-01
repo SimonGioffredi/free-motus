@@ -1,61 +1,41 @@
-# 04-free
+# TEST TECHNIQUE | Free
 
-This template should help get you started developing with Vue 3 in Vite.
+WebApp - Vue | Motus
 
-## Recommended IDE Setup
+## START
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+**⏳ Temps passés**
+- 2 heures 10
 
-## Type Support for `.vue` Imports in TS
+**🔧 Fonctionnalités misent en place**
+- Motus
+- Typescript
+- Atomic Design
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+**🚧 Fonctionnalités partiellement misent en place**
+- Tests unitaires
 
-## Customize configuration
+**❌ Fonctionnalités qui ne fonctionnent pas (mais qui devraient)**
+- Eslint
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Soucis rencontrés
 
-## Project Setup
+**Tailwind.css**
 
-```sh
-npm install
-```
+Première fois que j'utilise cette librairie (et même première fois que j'utilise une librairie CSS depuis mes études), donc un peu compliqué à prendre en main totalement en 15 minutes.
 
-### Compile and Hot-Reload for Development
+Ça me semble tout de même assez simple à appréhender, au fil du temps, on retient le nom des classes à utiliser.
 
-```sh
-npm run dev
-```
+**Tests unitaires**
 
-### Type-Check, Compile and Minify for Production
+Pareil, première fois que j'utilise une librairie de test unitaire. Comme je suis en agence, c'est complexe de mettre en place des tests sur nos projets.
 
-```sh
-npm run build
-```
+Ça me semble déjà un peu plus complexe, mais ça m'intéresse beaucoup.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Lorsque je lance les tests avec `yarn test:unit`, il me dit qu'il y a une erreur, pourtant tous mes sous-tests se passent bien. C'est le soucis que j'ai.
 
-```sh
-npm run test:unit
-```
+**ESLint**
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+Il ne fonctionne pas. Je l'ai installé de base avec Vue et je n'ai pas perdu de temps avec ça, parce que régler les soucis d'Eslint, ça peut prendre vraiment beaucoup de temps.
 
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Je n'ai plus l'habitude de bosser sans linter, donc il y a certainement des pétouilles d'indentation.
